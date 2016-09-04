@@ -1,0 +1,30 @@
+Copyright 2012-2016 Specialized Solutions LLC
+sales <at> specializedsolutionsllc <dot> com
+
+Title to the Materials (contents of the file referring to this agreement) remain with Specialized Solutions LLC.  The Materials are copyrighted and are protected by United States copyright laws.  Copyright notices cannot be removed from the Materials.  The DefCon 24 user agrees to prevent any unauthorized copying of the Materials.  Except as expressly provided herein, Specialized Solutions LLC does not grant any express or implied right to the DefCon 24 user under Specialized Solutions LLC patents, copyrights, trademarks, or trade secret information.
+
+The materials are provided “as is”.  Specialized Solutions LLC disclaims all express or implied warranties with respect to them, including any implied warranties of merchantability, non-infringement, and fitness for any particular purpose.
+
+Limitation of Liability:  Neither Specialized Solutions LLC nor its suppliers shall be liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business interruption, loss of business information, or other loss) arising out of the use of or inability to use the software, even if Specialized Solutions LLC has been advised of the possibility of such damages.  Because some jurisdictions prohibit the exclusion or limitation of liability for consequential or incidental damages, the above limitation may not apply to you.
+
+Specialized Solutions LLC grants the DefCon 24 user the following:
+
+A. A non-exclusive, non-assignable, copyright license to use the Materials as part of any educational project using the Materials.
+
+The DefCon 24 user may NOT:
+
+A. Use or copy the Materials except as provided in this Agreement.
+B. Rent or lease the Materials to any third party.
+C. Assign this Agreement or transfer the Materials without the express written consent of Specialized Solutions LLC.
+D. Distribute, sublicense or transfer the Materials and derivatives thereof to any third party without the express written consent of Specialized Solutions LLC.
+E. Reverse engineer, decompile, or disassemble the Materials not provided in source code form.
+F. Use the materials in any product without the express written consent of Specialized Solutions LLC.
+
+It is agreed that this Agreement shall be governed by, construed and enforced in accordance with the internal laws (and not the conflict of law rules) of the State of Indiana.  Moreover, any dispute arising between the parties hereto and/or under this Agreement shall be heard by the state court (either circuit or superior) or the federal court located in Fort Wayne, Indiana.
+
+If any provision or part of this Agreement shall be declared illegal, void, or unenforceable, the remaining provisions shall remain in full force and effect.
+
+In the event of legal action, the prevailing party in any legal dispute shall be entitled to recover from the other all costs and expense associated therewith including, but not necessarily limited to, reasonable attorneys' fees and related litigation costs and expenses.
+
+
+

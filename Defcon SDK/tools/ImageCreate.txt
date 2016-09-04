@@ -1,0 +1,18 @@
+Image Create Utility 
+Copyright 2016 Specialized Solutions LLC
+
+This utility takes a 16-bit, RGB 565, image and converts it into a PAWN file that can be included and called to show the bitmap on the badge LCD.
+
+The image must be sized so that it is no larger than 128x128 pixels.  Also, the image must be in RGB565 format.  GIMP can be used to manipulate the image, then when exporting the image as a .bmp file, under advanced options the color space can be selected to be 565.
+
+To call the utility, you must have Perl installed (Strawberry Perl is what I use on Windows).  If you need any other packages installed for Perl (maybe File::Slurp), the start the CPAN client using the shortcut made by the installer and type "install File::Slurp" at the command line.  You should be good to go after this is done.  Email me at nhoch <at> specializedsolutionsllc <dot> com if you have any problems. 
+
+The command line format is:
+
+perl ImageCreate.pl --in <my_file.bmp>
+
+A PAWN file will be created with the same name as the passed file, with a .p extension.  This file can then be included using the #include directive in your PAWN script.
+
+Inside of this PAWN file, a single method is made of the form "display_<image name>()".  You will need to tweak the origin coordinates to get the image lined up where you want it to go on the LCD.  Then, just call the routine after you call qcm_display_init().
+
+

@@ -1,0 +1,44 @@
+Defcon 24 Car Hacking Village Badge USB Overview
+Copyright 2016 Specialized Solutions LLC
+nhoch <at> specializedsolutionsllc <dot> com if you have any problems. 
+
+-----------------------------------------------------------------------------------
+Intro
+-----------------------------------------------------------------------------------
+This document describes how to talk to the badge over USB if you do not use windows and the supplied tools, or you wish to implement your own control software.
+
+The badge enumerates as a "raw" usb device with one interface that has two endpoints (IN/OUT).  It supports frames up to 64 bytes in size (USB full-speed, 12Mbps).  
+
+The VID/PID is 0x0483 / 0x580C.
+
+On windows 8 and up, it uses driver-less install, which uses WinUSB.  The UUID used to retrieve the device from the WinUSB subsystem is {EA0BD5C3-50F3-4888-84B4-74E50E1649DB}.  If you really need windows 7 drivers, contact me.
+
+-----------------------------------------------------------------------------------
+Messaging
+-----------------------------------------------------------------------------------
+
+The message format carried by a frame starts with one byte, which is the command ID, followed by up to 63 bytes of payload.
+
+The mesage ID's are as follows:
+
+0x00: Sent by the device to acknowledge a command.  First byte of payload is the command ID being ACK'd.
+
+0x01: When sent from the PC, data payload is sent to the @host_rx callback in PAWN script.  When sent by the device, it is the result of a call to printf/qcm_host_send() in PAWN.  ACK's are not used.
+
+0x13: Sent from the PC to start loading a PAWN script.  No payload is required.  ACK will be generated when update frames can be sent.
+
+0x14: Update frame containing fragment of .amx file.  .amx file is simply streamed to the device using several 0x14 commands.  First 2 bytes of payload (MSB-first) is the frame number (starts at 0).  The remainder of frame data is the portion of the .amx file.
+
+0x15: Signals that script has been sent and that device can proceed with running it.  Device will reboot and if the script was loaded successfully it will start.  If there is a problem, then the red LED will flash on start which indicates that no valid script is present.
+
+0x20: Sent from the PC to start loading an update to the bootloader.  No payload is required.  ACK will be generated when update frames can be sent.
+
+0x21: Update frame containing fragment of .qup file.  .qup file is simply streamed to the device using several 0x21 commands.  First 2 bytes of payload (MSB-first) is the frame number (starts at 0).  The remainder of frame data is the portion of the .qup file.
+
+0x22: Signals that update has been sent and that device can proceed with running it.  Device will reboot and if the update was loaded successfully it will start.  If there is a problem, then the LED will flash with the bootloader pattern that indicates that a valid application is not present.
+
+-----------------------------------------------------------------------------------
+Demo App
+-----------------------------------------------------------------------------------
+A demonstration application has been provided that shows using WinUSB with C# that uses the above messages.
+
